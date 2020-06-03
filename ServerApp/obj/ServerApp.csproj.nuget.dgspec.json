@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\SportsStore\\ServerApp\\ServerApp.csproj": {}
+    "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\essentialangular\\SportsStore\\ServerApp\\ServerApp.csproj": {}
   },
   "projects": {
-    "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\SportsStore\\ServerApp\\ServerApp.csproj": {
+    "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\essentialangular\\SportsStore\\ServerApp\\ServerApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\SportsStore\\ServerApp\\ServerApp.csproj",
+        "projectUniqueName": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\essentialangular\\SportsStore\\ServerApp\\ServerApp.csproj",
         "projectName": "ServerApp",
-        "projectPath": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\SportsStore\\ServerApp\\ServerApp.csproj",
+        "projectPath": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\essentialangular\\SportsStore\\ServerApp\\ServerApp.csproj",
         "packagesPath": "C:\\Users\\prayal\\.nuget\\packages\\",
-        "outputPath": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\SportsStore\\ServerApp\\obj\\",
+        "outputPath": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\essentialangular\\SportsStore\\ServerApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prayal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,16 @@
         "netcoreapp3.1": {
           "dependencies": {
             "Microsoft.AspNetCore.SpaServices.Extensions": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[3.1.4, )"
             }
