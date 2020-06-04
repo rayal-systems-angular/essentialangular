@@ -3,6 +3,11 @@ using ServerApp.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Collections.Generic;
+using ServerApp.Models.BindingTargets;
+using Microsoft.AspNetCore.JsonPatch;
+using System.Text.Json;
+using System.Reflection;
+using System.ComponentModel;
 
 namespace ServerApp.Controllers {
     [Route("api/products")]
@@ -12,7 +17,7 @@ namespace ServerApp.Controllers {
         public ProductValuesController(DataContext ctx) {
             _context = ctx;
         }
-        
+
         [HttpGet("{id}")]
         public Product GetProduct(long id) {
             Product result = _context.Products
@@ -20,7 +25,7 @@ namespace ServerApp.Controllers {
                 .Include(p => p.Ratings)
                 .FirstOrDefault(p => p.ProductId == id);
 
-            if(result != null) {
+            if (result != null) {
                 if (result.Supplier != null) {
                     result.Supplier.Products = result.Supplier.Products.Select(p =>
                         new Product {
@@ -29,10 +34,10 @@ namespace ServerApp.Controllers {
                             Category = p.Category,
                             Description = p.Description,
                             Price = p.Price
-                    });
+                        });
                 }
-                if(result.Ratings != null) {
-                    foreach(Rating r in result.Ratings) {
+                if (result.Ratings != null) {
+                    foreach (Rating r in result.Ratings) {
                         r.Product = null;
                     }
                 }
@@ -40,9 +45,9 @@ namespace ServerApp.Controllers {
             return result;
         }
         [HttpGet]
-        public IEnumerable<Product> GetProducts(string category, string search, 
+        public IEnumerable<Product> GetProducts(string category, string search,
             bool related = false) {
-            
+
             IQueryable<Product> query = _context.Products;
 
             if (!string.IsNullOrWhiteSpace(category)) {
@@ -72,6 +77,64 @@ namespace ServerApp.Controllers {
             else {
                 return query;
             }
+        }
+
+        [HttpPost]
+        public IActionResult CreateProduct([FromBody] ProductData product) {
+            if (ModelState.IsValid) {
+                Product p = product.Product;
+                if (p.Supplier != null && p.Supplier.SupplierId != 0) {
+                    _context.Attach(p.Supplier);
+                }
+                _context.Add(p);
+                _context.SaveChanges();
+                return Ok(p.ProductId);
+            } else {
+                return BadRequest(ModelState);
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult ReplaceProduct(long id, [FromBody] ProductData pData) {
+            if (ModelState.IsValid) {
+                Product p = pData.Product;
+                p.ProductId = id;
+                if (p.Supplier != null && p.Supplier.SupplierId != 0) {
+                    _context.Attach(p.Supplier);
+                }
+                _context.Update(p);
+                _context.SaveChanges();
+                return Ok();
+            }
+            else {
+                return BadRequest(ModelState);
+            }
+        }
+        // ...other methods omitted for brevity...
+        [HttpPatch("{id}")]
+        public IActionResult UpdateProduct(long id, [FromBody]JsonPatchDocument<ProductData> patch) {
+            Product product = _context.Products
+                .Include(p => p.Supplier)
+                .First(p => p.ProductId == id);
+
+            ProductData pData = new ProductData { Product = product };
+            patch.ApplyTo(pData, ModelState);
+
+            if (ModelState.IsValid && TryValidateModel(pData)) {
+                if (product.Supplier != null && product.Supplier.SupplierId != 0) {
+                    _context.Attach(product.Supplier);
+                }
+                _context.SaveChanges();
+                return Ok();
+            } else {
+                return BadRequest(ModelState);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public void DeleteProduct(long id) {
+            _context.Products.Remove(new Product { ProductId = id });
+            _context.SaveChanges();
         }
     }
 }

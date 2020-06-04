@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\essentialangular\\SportsStore\\ServerApp\\ServerApp.csproj": {}
+    "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\SportsStore\\serverapp\\ServerApp.csproj": {}
   },
   "projects": {
-    "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\essentialangular\\SportsStore\\ServerApp\\ServerApp.csproj": {
+    "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\SportsStore\\serverapp\\ServerApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\essentialangular\\SportsStore\\ServerApp\\ServerApp.csproj",
+        "projectUniqueName": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\SportsStore\\serverapp\\ServerApp.csproj",
         "projectName": "ServerApp",
-        "projectPath": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\essentialangular\\SportsStore\\ServerApp\\ServerApp.csproj",
+        "projectPath": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\SportsStore\\serverapp\\ServerApp.csproj",
         "packagesPath": "C:\\Users\\prayal\\.nuget\\packages\\",
-        "outputPath": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\essentialangular\\SportsStore\\ServerApp\\obj\\",
+        "outputPath": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\SportsStore\\serverapp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prayal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,6 +38,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
             "Microsoft.AspNetCore.SpaServices.Extensions": {
               "target": "Package",
               "version": "[3.1.4, )"

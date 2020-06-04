@@ -30,9 +30,10 @@ namespace ServerApp {
             services.AddControllersWithViews()
                 .AddJsonOptions(opts => {
                     opts.JsonSerializerOptions.IgnoreNullValues = true;
-                });
+                }).AddNewtonsoftJson();
 
             services.AddControllersWithViews();
+
             services.AddSwaggerGen(options => {
                 options.SwaggerDoc("v1", new OpenApiInfo { 
                     Title = "SportsStore API", Version = "v1"
