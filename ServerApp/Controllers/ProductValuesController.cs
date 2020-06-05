@@ -44,9 +44,10 @@ namespace ServerApp.Controllers {
             }
             return result;
         }
+        // ...other methods omitted for brevity...
         [HttpGet]
-        public IEnumerable<Product> GetProducts(string category, string search,
-            bool related = false) {
+        public IActionResult GetProducts(string category, string search,
+            bool related = false, bool metadata = false) {
 
             IQueryable<Product> query = _context.Products;
 
@@ -72,12 +73,20 @@ namespace ServerApp.Controllers {
                         p.Ratings.ForEach(r => r.Product = null);
                     }
                 });
-                return data;
+                return metadata ? CreateMetadata(data) : Ok(data);
             }
             else {
-                return query;
+                return metadata ? CreateMetadata(query) : Ok(query);
             }
         }
+
+        private IActionResult CreateMetadata(IEnumerable<Product> products) {
+            return Ok(new {
+                data = products,
+                categories = _context.Products.Select(p => p.Category).Distinct().OrderBy(c => c)
+            }); ;
+        }
+        // ...other methods omitted for brevity...
 
         [HttpPost]
         public IActionResult CreateProduct([FromBody] ProductData product) {

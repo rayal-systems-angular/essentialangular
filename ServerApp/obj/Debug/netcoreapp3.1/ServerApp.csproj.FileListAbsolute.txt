@@ -158,3 +158,4 @@ C:\d drive\pankaj\learning\Jun-20\angular\essentialangular\SportsStore\ServerApp
 C:\D Drive\Pankaj\Learning\Jun-20\Angular\EssentialAngular\SportsStore\serverapp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\D Drive\Pankaj\Learning\Jun-20\Angular\EssentialAngular\SportsStore\serverapp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\D Drive\Pankaj\Learning\Jun-20\Angular\EssentialAngular\SportsStore\serverapp\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\D Drive\Pankaj\Learning\Jun-20\Angular\EssentialAngular\SportsStore\serverapp\bin\Debug\netcoreapp3.1\libman.json
