@@ -9,7 +9,6 @@ export class RatingsComponent {
   @Input() product: Product;
 
   get stars(): boolean[] {
-    console.log(this.product);
     if (this.product != null && this.product.ratings != null) {
       let total = this.product.ratings
         .map((r) => r.stars)

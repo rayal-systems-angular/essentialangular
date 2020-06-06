@@ -35,7 +35,6 @@ export class AppComponent {
     let p = this.repo.products[0];
     p.name = "Modified Product";
     p.category = "Modified Category";
-    console.log(p);
     this.repo.replaceProduct(p);
   }
 
