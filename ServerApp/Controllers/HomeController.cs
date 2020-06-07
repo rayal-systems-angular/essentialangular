@@ -25,6 +25,11 @@ namespace ServerApp.Controllers
             return View(_context.Products.First());
         }
 
+        public IActionResult Blazor()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
