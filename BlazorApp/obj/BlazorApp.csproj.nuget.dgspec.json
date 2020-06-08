@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj": {}
+    "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj": {}
   },
   "projects": {
-    "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj": {
+    "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj",
+        "projectUniqueName": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj",
         "projectName": "BlazorApp",
-        "projectPath": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj",
+        "projectPath": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj",
         "packagesPath": "C:\\Users\\prayal\\.nuget\\packages\\",
-        "outputPath": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\EssentialAngular\\essentialangular\\BlazorApp\\obj\\",
+        "outputPath": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\essentialangular\\BlazorApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prayal\\AppData\\Roaming\\NuGet\\NuGet.Config",

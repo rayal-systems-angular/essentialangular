@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Repository } from './models/repository';
-import { Product } from './models/product.model';
-import { Supplier } from "./models/supplier.model";
+import { ErrorHandlerService } from './errorHandler.service';
 
 @Component({
   selector: 'app-root',
@@ -9,53 +7,19 @@ import { Supplier } from "./models/supplier.model";
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(private repo: Repository) {}
+  private lastError: string[];
 
-  get product(): Product {
-    return this.repo.product;
+  constructor(errorService: ErrorHandlerService) {
+    errorService.errors.subscribe((error) => {
+      this.lastError = error;
+    });
   }
 
-  get products(): Product[] {
-    return this.repo.products;
+  get error(): string[] {
+    return this.lastError;
   }
 
-  createProduct(){
-    this.repo.createProduct(new Product(0, "X-Ray Scuba Mask", "Watersports",
-      "See what the fish are hiding", 49.99, this.repo.products[0].supplier));
-  }
-
-  createProductAndSupplier(){
-    let s = new Supplier(0, "Rocket Show Corp", "Boston", "MA");
-    let p = new Product(0, "Rocket-Powered Shoes", "Running",
-      "Set a new record", 100, s);
-    this.repo.createProductAndSupplier(p, s);
-  }
-
-  replaceProduct(){
-    let p = this.repo.products[0];
-    p.name = "Modified Product";
-    p.category = "Modified Category";
-    this.repo.replaceProduct(p);
-  }
-
-  replaceSupplier(){
-    let s = new Supplier(3, "Modified Supplier", "New York", "NY");
-    this.repo.replaceSupplier(s);
-  }
-
-  updateProduct(){
-    let changes = new Map<string, any>();
-    changes.set("name", "Green Kayak");
-    changes.set("supplier", null);
-    this.repo.updateProduct(1, changes);
-  }
-  
-  // ...other methods omitted for brevity...
-  deleteProduct(){
-    this.repo.deleteProduct(1);
-  }
-
-  deleteSupplier(){
-    this.repo.deteleSupplier(2);
+  clearError() {
+    this.lastError = null;
   }
 }

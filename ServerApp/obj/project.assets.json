@@ -9198,11 +9198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\EssentialAngular\\essentialangular\\serverapp\\ServerApp.csproj",
+      "projectUniqueName": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\essentialangular\\serverapp\\ServerApp.csproj",
       "projectName": "ServerApp",
-      "projectPath": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\EssentialAngular\\essentialangular\\serverapp\\ServerApp.csproj",
+      "projectPath": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\essentialangular\\serverapp\\ServerApp.csproj",
       "packagesPath": "C:\\Users\\prayal\\.nuget\\packages\\",
-      "outputPath": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\EssentialAngular\\essentialangular\\serverapp\\obj\\",
+      "outputPath": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\essentialangular\\serverapp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\prayal\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9218,8 +9218,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj": {
-              "projectPath": "C:\\d drive\\pankaj\\learning\\Jun-20\\angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj"
+            "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj": {
+              "projectPath": "C:\\D Drive\\Pankaj\\Learning\\Jun-20\\Angular\\EssentialAngular\\essentialangular\\BlazorApp\\BlazorApp.csproj"
             }
           }
         }

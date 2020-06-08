@@ -8,11 +8,15 @@ import { CheckoutSummaryComponent } from './store/checkout/checkoutSummary.compo
 import { OrderConfirmationComponent } from './store/checkout/orderConfirmation.component';
 
 const routes: Routes = [
-  {path: 'checkout/step1', component: CheckoutDetailsComponent},
-  {path: 'checkout/step2', component: CheckoutPaymentComponent},
-  {path: 'checkout/step3', component: CheckoutSummaryComponent},
-  {path: 'checkout/confirmation', component: OrderConfirmationComponent},
-  {path: 'checkout', redirectTo: '/checkout/step1', pathMatch: 'full'},
+  {
+    path: 'admin', loadChildren: () =>
+      import('./admin/admin.module').then(module => module.AdminModule),
+  },
+  { path: 'checkout/step1', component: CheckoutDetailsComponent },
+  { path: 'checkout/step2', component: CheckoutPaymentComponent },
+  { path: 'checkout/step3', component: CheckoutSummaryComponent },
+  { path: 'checkout/confirmation', component: OrderConfirmationComponent },
+  { path: 'checkout', redirectTo: '/checkout/step1', pathMatch: 'full' },
   { path: 'cart', component: CartDetailComponent },
   { path: 'store/:category/:page', component: ProductSelectionComponent },
   { path: 'store/:categoryOrPage', component: ProductSelectionComponent },
@@ -25,4 +29,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
