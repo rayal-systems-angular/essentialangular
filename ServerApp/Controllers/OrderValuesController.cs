@@ -9,11 +9,13 @@ using Microsoft.AspNetCore.Authorization;
 namespace ServerApp.Controllers {
     [Route("/api/orders")]
     [ApiController]
+    [AutoValidateAntiforgeryToken]
     public class OrderValuesController : Controller {
         private DataContext _context;
         public OrderValuesController(DataContext ctx) {
             _context = ctx;
         }
+        // ...methods omitted for brevity...
 
         [HttpGet]
         public IEnumerable<Order> GetOrders() {

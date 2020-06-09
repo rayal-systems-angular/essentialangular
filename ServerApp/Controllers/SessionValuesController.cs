@@ -7,6 +7,7 @@ using ServerApp.Models.BindingTargets;
 namespace ServerApp.Controllers {
     [Route("/api/session")]
     [ApiController]
+    [AutoValidateAntiforgeryToken]
     public class SessionValuesController : Controller {
         [HttpGet("cart")]
         public IActionResult GetCart() {
