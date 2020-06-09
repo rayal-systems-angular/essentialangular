@@ -8,10 +8,12 @@ using Microsoft.AspNetCore.JsonPatch;
 using System.Text.Json;
 using System.Reflection;
 using System.ComponentModel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ServerApp.Controllers {
     [Route("api/products")]
     [ApiController]
+    [Authorize(Roles = "Administrator")]
     public class ProductValuesController : Controller {
         private DataContext _context;
         public ProductValuesController(DataContext ctx) {
@@ -19,6 +21,7 @@ namespace ServerApp.Controllers {
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public Product GetProduct(long id) {
             Product result = _context.Products
                 .Include(p => p.Supplier).ThenInclude(p => p.Products)
@@ -44,8 +47,8 @@ namespace ServerApp.Controllers {
             }
             return result;
         }
-        // ...other methods omitted for brevity...
         [HttpGet]
+        [AllowAnonymous]
         public IActionResult GetProducts(string category, string search,
             bool related = false, bool metadata = false) {
 
@@ -62,7 +65,7 @@ namespace ServerApp.Controllers {
                     || p.Description.ToLower().Contains(searchLower));
             }
 
-            if (related) {
+            if (related && HttpContext.User.IsInRole("Administrator")) {
                 query = query.Include(p => p.Supplier).Include(p => p.Ratings);
                 List<Product> data = query.ToList();
                 data.ForEach(p => {
@@ -86,7 +89,6 @@ namespace ServerApp.Controllers {
                 categories = _context.Products.Select(p => p.Category).Distinct().OrderBy(c => c)
             }); ;
         }
-        // ...other methods omitted for brevity...
 
         [HttpPost]
         public IActionResult CreateProduct([FromBody] ProductData product) {
@@ -119,7 +121,6 @@ namespace ServerApp.Controllers {
                 return BadRequest(ModelState);
             }
         }
-        // ...other methods omitted for brevity...
         [HttpPatch("{id}")]
         public IActionResult UpdateProduct(long id, [FromBody]JsonPatchDocument<ProductData> patch) {
             Product product = _context.Products

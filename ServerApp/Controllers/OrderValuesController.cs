@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ServerApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ServerApp.Controllers {
     [Route("/api/orders")]
@@ -29,6 +30,7 @@ namespace ServerApp.Controllers {
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult CreateOrder([FromBody] Order order) {
             if(ModelState.IsValid) {
                 order.OrderId = 0;

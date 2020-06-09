@@ -334,3 +334,5 @@ C:\D Drive\Pankaj\Learning\Jun-20\Angular\EssentialAngular\essentialangular\serv
 C:\D Drive\Pankaj\Learning\Jun-20\Angular\EssentialAngular\essentialangular\serverapp\bin\Debug\netcoreapp3.1\BlazorApp.dll
 C:\D Drive\Pankaj\Learning\Jun-20\Angular\EssentialAngular\essentialangular\serverapp\bin\Debug\netcoreapp3.1\BlazorApp.pdb
 C:\D Drive\Pankaj\Learning\Jun-20\Angular\EssentialAngular\essentialangular\serverapp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Blazor.cshtml.g.cs
+C:\D Drive\Pankaj\Learning\Jun-20\Angular\EssentialAngular\essentialangular\ServerApp\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\D Drive\Pankaj\Learning\Jun-20\Angular\EssentialAngular\essentialangular\ServerApp\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
